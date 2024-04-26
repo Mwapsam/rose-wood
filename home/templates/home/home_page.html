@@ -1,0 +1,720 @@
+{% extends "base.html" %}
+{% load static wagtailcore_tags wagtailimages_tags wagtailroutablepage_tags %}
+{% load social_share %}
+
+{% block body_class %}template-homepage{% endblock %}
+
+{% block content %}
+
+<body class="body-dark">
+    <div class="preloader-bg"></div>
+    <div id="preloader">
+        <div id="preloader-status">
+            <div class="preloader-position loader">
+                <span></span>
+            </div>
+        </div>
+    </div>
+
+    <nav class="navbar navbar-fixed-top navbar-bg-switch">
+     
+        <div class="container">
+            <div class="navbar-header fadeIn-element">
+
+                <div class="logo">
+                    <a class="navbar-brand logo" href="#">
+
+                        <img alt="Logo" height="70" width="70" class="logo-light" src="{% static 'img/logo-white.png' %}">
+
+                        <img alt="Logo" height="70" width="70" class="logo-dark" src="{% static 'img/logo-black.png' %}">
+
+                    </a>
+                </div>
+
+            </div>
+
+            <div class="main-navigation fadeIn-element">
+                <div class="navbar-header">
+                    <button aria-expanded="false" class="navbar-toggle collapsed" data-target="#navbar-collapse" data-toggle="collapse" type="button"><span class="sr-only">Toggle
+                    navigation</span> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span></button>
+                </div>
+                <div class="collapse navbar-collapse" id="navbar-collapse">
+                    <!-- menu start -->
+                    <ul class="nav navbar-nav navbar-right">
+                        <li>
+                            <a class="page-scroll active" href="#home">Home</a>
+                        </li>
+                        <li>
+                            <a class="page-scroll" href="#about">About</a>
+                        </li>
+                        <li>
+                            <a class="page-scroll" href="#projects">Projects</a>
+                        </li>
+                        <li>
+                            <a class="page-scroll" href="#benefits">Benefits</a>
+                        </li>
+                        <li>
+                            <a class="page-scroll" href="#three-step-method">Services</a>
+                        </li>
+                    </ul>
+                    <!-- menu end -->
+                </div>
+            </div>
+            <!-- main navigation end -->
+        </div>
+        <!-- container end -->
+    </nav>
+    <!-- navigation end -->
+    <!-- vertical lines start -->
+    <div class="vertical-lines-wrapper">
+        <div class="vertical-lines"></div>
+    </div>
+    <!-- vertical lines end -->
+    <!-- home start -->
+    <div class="upper-page" id="home">
+        <!-- hero bg start -->
+        <div class="hero-fullscreen overlay overlay-top-bottom-dark-15">
+            <!-- single image start -->
+            <div class="hero-fullscreen-FIX overlay overlay-dark-70">
+                <div class="hero-bg bg-img-SINGLE"></div>
+            </div>
+            <!-- single image end -->
+        </div>
+        <!-- hero bg end -->
+        <!-- center container start -->
+        <div class="center-container">
+            <!-- center block start -->
+            <div class="center-block">
+                <!-- home subtitle start -->
+                <h2 class="home-page-title fadeIn-element">
+                    Ex Nihilo's
+                </h2>
+                <!-- home subtitle end -->
+                <!-- divider start -->
+                <div class="inner-divider-half"></div>
+                <!-- divider end -->
+                <!-- home title start -->
+                <h1 class="home-page-title fadeIn-element">
+                    Rose Gold
+                </h1>
+                <!-- home title end -->
+                <!-- divider start -->
+                <div class="inner-divider-half"></div>
+                <!-- divider end -->
+                <!-- button start -->
+                <div class="more-wraper-center more-wraper-center-home fadeIn-element">
+                    <a class="page-scroll" href="#projects">
+                        <div class="more-button-bg-center more-button-circle"></div>
+                        <div class="more-button-txt-center">
+                            <span>Live projects</span>
+                        </div>
+                    </a>
+                </div>
+                <!-- button end -->
+            </div>
+            <!-- center block end -->
+        </div>
+        <!-- center container end -->
+        <!-- scroll indicator start -->
+        <div class="scroll-indicator">
+            <div class="scroll-indicator-wrapper">
+                <div class="scroll-line"></div>
+            </div>
+        </div>
+        <!-- scroll indicator end -->
+    </div>
+    <!-- home end -->
+    <!-- must haves start -->
+    <section id="must-haves" class="bg-color-1">
+        <!-- container start -->
+        <div class="container sections">
+            <!-- divider start -->
+            <div class="inner-divider"></div>
+            <!-- divider end -->
+            <!-- row start -->
+            <div class="row">
+                <!-- col start -->
+                <div class="col-lg-12">
+                    <!-- page title start -->
+                    <h2 class="section-heading section-heading-small">
+                        Ex Nihilo <span>Must-Haves</span>
+                    </h2>
+                    <!-- page title end -->
+                    <!-- divider start -->
+                    <div class="inner-divider-ultra-half"></div>
+                    <!-- divider end -->
+                    <!-- page subtitle start -->
+                    <h2 class="section-subheading">
+                        <span>Take your pick</span>
+                    </h2>
+                    <!-- page subtitle end -->
+                </div>
+                <!-- col end -->
+            </div>
+            <!-- row end -->
+            <!-- divider start -->
+            <div class="inner-divider-half"></div>
+            <!-- divider end -->
+            <!-- row start -->
+            <div class="row">
+                <!-- col start -->
+                <div class="col-lg-12">
+                    <!-- slick must haves start -->
+                    <div class="slick-slide-must-haves slick-must-haves">
+                        {% for slide in page.slides.all %}
+                            {% for image in slide.slide_images.all %}
+                                <div class="img-fullwidth-wrapper">
+                                    <a href="{{image.image.file.url}}" target="_top">
+                                        <img height="420" width="290" alt="Image Preview" src="{{image.image.file.url}}"></a>
+                                </div>
+                            {% endfor %}
+                        {% endfor %}
+
+                    </div>
+                    <!-- slick must haves end -->
+                </div>
+                <!-- col end -->
+            </div>
+            <!-- row end -->
+            <!-- divider start -->
+            <div class="inner-divider"></div>
+            <!-- divider end -->
+        </div>
+        <!-- container end -->
+    </section>
+    <!-- must haves end -->
+    <!-- about start -->
+    <section id="about">
+        <!-- container start -->
+        <div class="container sections">
+            <!-- divider start -->
+            <div class="inner-divider"></div>
+            <!-- divider end -->
+            <!-- row start -->
+            <div class="row">
+                <!-- col start -->
+                <div class="col-lg-12">
+                    <!-- page title start -->
+                    <h2 class="section-heading">
+                        Rose Gold
+                    </h2>
+                    <!-- page title end -->
+                    <!-- divider start -->
+                    <div class="inner-divider-ultra-half"></div>
+                    <!-- divider end -->
+                    <!-- page subtitle start -->
+                    <h2 class="section-subheading">
+                        <span>A fully responsive template</span>
+                    </h2>
+                    <!-- page subtitle end -->
+                </div>
+                <!-- col end -->
+            </div>
+            <!-- row end -->
+            <!-- divider start -->
+            <div class="inner-divider-half"></div>
+            <!-- divider end -->
+            <!-- row start -->
+            <div class="row section-intro">
+                <!-- col start -->
+                <div class="col-lg-12">
+                    <div class="intro-txt">
+                        <p>
+                            Rose Gold is a fully responsive template with a modern design suitable for all creative fields. The template is featuring a powerful video and imagery making it a perfect choice for photographers, artists and designers who want to showcase their work.
+                        </p>
+                    </div>
+                </div>
+                <!-- col end -->
+            </div>
+            <!-- row end -->
+            <!-- row start -->
+            <div class="row">
+                <!-- col start -->
+                <div class="col-lg-12">
+                    <!-- intro start -->
+                    <div class="intro-years">
+                        <!-- divider start -->
+                        <div class="inner-divider"></div>
+                        <!-- divider end -->
+                        <!-- line start -->
+                        <div class="the-line"></div>
+                        <!-- line end -->
+                        <!-- divider start -->
+                        <div class="inner-divider-half"></div>
+                        <!-- divider end -->
+                        <!-- page subtitle start -->
+                        <h2>
+                            Ready
+                        </h2>
+                        <!-- page subtitle end -->
+                        <!-- divider start -->
+                        <div class="inner-divider-half"></div>
+                        <!-- divider end -->
+                        <!-- page title start -->
+                        <h3 class="facts-counter-number">
+                            12
+                        </h3>
+                        <!-- page title end -->
+                        <!-- divider start -->
+                        <div class="inner-divider-half"></div>
+                        <!-- divider end -->
+                        <!-- page subtitle start -->
+                        <h4>
+                            Projects
+                        </h4>
+                        <!-- page subtitle end -->
+                    </div>
+                    <!-- intro end -->
+                    <!-- divider start -->
+                    <div class="inner-divider-half"></div>
+                    <!-- divider end -->
+                    <!-- line start -->
+                    <div class="the-line"></div>
+                    <!-- line end -->
+                </div>
+                <!-- col end -->
+            </div>
+            <!-- row end -->
+        </div>
+        <!-- container end -->
+    </section>
+    <!-- about end -->
+    <!-- projects start -->
+    <section id="projects">
+        <!-- container start -->
+        <div class="container-fluid sections">
+            <!-- divider start -->
+            <div class="inner-divider"></div>
+            <!-- divider end -->
+            <!-- row start -->
+            <div class="row">
+                <!-- col start -->
+                <div class="col-lg-12">
+                    <!-- page title start -->
+                    <h2 class="section-heading section-heading-small">
+                        The <span>Projects</span>
+                    </h2>
+                    <!-- page title end -->
+                    <!-- divider start -->
+                    <div class="inner-divider-ultra-half"></div>
+                    <!-- divider end -->
+                    <!-- page subtitle start -->
+                    <h2 class="section-subheading">
+                        <span>By all means, choose your style</span>
+                    </h2>
+                    <!-- page subtitle end -->
+                </div>
+                <!-- col end -->
+            </div>
+            <!-- row end -->
+            <!-- divider start -->
+            <div class="inner-divider-half"></div>
+            <!-- divider end -->
+            <!-- row start -->
+            <div class="row">
+                <div class="move-up section-projects">
+                    {% for project in page.projects.all %}
+                    <div class="col-sm-12 col-md-6 col-lg-6">
+                        <div class="image-works">
+                            <div class="hover-effect"></div>
+                            <div class="icon-works">
+                                <!-- button start -->
+                                <div class="more-wraper-center more-wraper-center-projects">
+                                    <a href="{% routablepageurl page 'project_detail' id=project.id %}" target="_top">
+                                        <div class="more-button-bg-center more-button-circle"></div>
+                                        <div class="more-button-txt-center">
+                                            <span>Live Preview</span>
+                                        </div>
+                                    </a>
+                                </div>
+                                <!-- button end -->
+                            </div>
+                            <img alt="Image Preview" src="{{project.project_images.first.image.file.url}}">
+                            
+                        </div>
+                    </div>
+                   {% endfor %}
+                </div>
+            </div>
+            <!-- row end -->
+            <!-- divider start -->
+            <div class="inner-divider-works"></div>
+            <!-- divider end -->
+        </div>
+        <!-- container end -->
+    </section>
+    <!-- projects end -->
+    <!-- must haves start -->
+    <section id="must-haves-2" class="bg-color-1">
+        <!-- container start -->
+        <div class="container sections">
+            <!-- divider start -->
+            <div class="inner-divider"></div>
+            <!-- divider end -->
+            <!-- row start -->
+            <div class="row">
+                <!-- col start -->
+                <div class="col-lg-12">
+                    <!-- page title start -->
+                    <h2 class="section-heading section-heading-small">
+                        Ex Nihilo <span>Must-Haves</span>
+                    </h2>
+                    <!-- page title end -->
+                    <!-- divider start -->
+                    <div class="inner-divider-ultra-half"></div>
+                    <!-- divider end -->
+                    <!-- page subtitle start -->
+                    <h2 class="section-subheading">
+                        <span>Take your pick</span>
+                    </h2>
+                    <!-- page subtitle end -->
+                </div>
+                <!-- col end -->
+            </div>
+            <!-- row end -->
+            <!-- divider start -->
+            <div class="inner-divider-half"></div>
+            <!-- divider end -->
+            <!-- row start -->
+            <div class="row">
+                <!-- col start -->
+                <div class="col-lg-12">
+                    <!-- slick must haves start -->
+                    <div class="slick-slide-must-haves slick-must-haves-2">
+                        {% for slide in page.slides.all %}
+                            {% for image in slide.slide_images.all %}
+                                <div class="img-fullwidth-wrapper">
+                                    <a href="https://themeforest.net/item/waye-under-construction-coming-soon-template/21332869" target="_top">
+                                        <img height="420" width="290" alt="Image Preview" src="{{image.image.file.url}}"></a>
+                                </div>
+                            {% endfor %}
+                        {% endfor %}
+                    </div>
+                    <!-- slick must haves end -->
+                </div>
+                <!-- col end -->
+            </div>
+            <!-- row end -->
+            <!-- divider start -->
+            <div class="inner-divider"></div>
+            <!-- divider end -->
+        </div>
+        <!-- container end -->
+    </section>
+    <!-- must haves end -->
+    <!-- benefits start -->
+    <section id="benefits">
+        <!-- container start -->
+        <div class="container-fluid sections">
+            <!-- divider start -->
+            <div class="inner-divider"></div>
+            <!-- divider end -->
+            <!-- row start -->
+            <div class="row">
+                <!-- col start -->
+                <div class="col-lg-12">
+                    <!-- page title start -->
+                    <h2 class="section-heading section-heading-small">
+                        Why <span>Choose</span> Rose Gold?
+                    </h2>
+                    <!-- page title end -->
+                    <!-- divider start -->
+                    <div class="inner-divider-ultra-half"></div>
+                    <!-- divider end -->
+                    <!-- page subtitle start -->
+                    <h2 class="section-subheading">
+                        <span>Aesthetic is a decision</span>
+                    </h2>
+                    <!-- page subtitle end -->
+                </div>
+                <!-- col end -->
+            </div>
+
+            <div class="inner-divider-half"></div>
+            <div class="row">
+                <div class="col-md-6 nopadding">
+                    <div class="slick-benefits">
+                        <div class="img-fullwidth-wrapper">
+                            <div class="img-fullwidth img-fullwidth-all img-fullwidth-benefits-carousel-1"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-6 nopadding">
+                    <!-- slick auto start -->
+                    <div class="slick-auto">
+                        <div class="blockquote bg-color-1">
+                            <!-- center container start -->
+                            <div class="center-container">
+                                <!-- center block start -->
+                                <div class="center-block">
+                                    <!-- skills bar start -->
+                                    <div class="show-skillbar">
+                                        <!-- skill 1 start -->
+                                        <div class="skillbar" data-percent="100">
+                                            <span class="skillbar-title">Quality</span>
+                                            <div class="skillbar-bar"></div>
+                                            <span class="skill-bar-percent"></span>
+                                        </div>
+                                        <!-- skill 1 end -->
+                                        <!-- skill 2 start -->
+                                        <div class="skillbar" data-percent="100">
+                                            <span class="skillbar-title">Affordability</span>
+                                            <div class="skillbar-bar"></div>
+                                            <span class="skill-bar-percent"></span>
+                                        </div>
+                                        <!-- skill 2 end -->
+                                        <!-- skill 3 start -->
+                                        <div class="skillbar" data-percent="100">
+                                            <span class="skillbar-title">Responsive Layout</span>
+                                            <div class="skillbar-bar"></div>
+                                            <span class="skill-bar-percent"></span>
+                                        </div>
+                                        <!-- skill 3 end -->
+                                        <!-- skill 4 start -->
+                                        <div class="skillbar" data-percent="100">
+                                            <span class="skillbar-title">Customer Support</span>
+                                            <div class="skillbar-bar"></div>
+                                            <span class="skill-bar-percent"></span>
+                                        </div>
+                                        <!-- skill 4 end -->
+                                    </div>
+                                    <!-- skills bar end -->
+                                </div>
+                                <!-- center block end -->
+                            </div>
+                            <!-- center container end -->
+                        </div>
+                    </div>
+                    <!-- slick auto end -->
+                </div>
+                <!-- col end -->
+            </div>
+            <!-- row end -->
+        </div>
+        <!-- container end -->
+    </section>
+    <!-- benefits end -->
+    <!-- three step method start -->
+    <section id="three-step-method">
+        <!-- divider start -->
+        <div class="inner-divider"></div>
+        <!-- divider end -->
+        <!-- container start -->
+        <div class="container sections">
+            <!-- row start -->
+            <div class="row">
+                <!-- col start -->
+                <div class="col-lg-12">
+                    <!-- page title start -->
+                    <h2 class="section-heading">
+                        <span>Services</span> Offered
+                    </h2>
+                    <!-- page title end -->
+                    <!-- divider start -->
+                    <div class="inner-divider-ultra-half"></div>
+                    <!-- divider end -->
+                    <!-- page subtitle start -->
+                    <h2 class="section-subheading">
+                        <span>Photography, Video, Motion</span>
+                    </h2>
+                    <!-- page subtitle end -->
+                </div>
+                <!-- col end -->
+            </div>
+            <!-- row end -->
+            <!-- divider start -->
+            <div class="inner-divider-half"></div>
+            <!-- divider end -->
+            <!-- row start -->
+            <div class="row section-three-step">
+                <!-- col start -->
+                <div class="col-md-3 three-step-method-block">
+                    <h4 class="three-step-method-heading">
+                        Photography
+                    </h4>
+                    <div class="three-step-method-number">
+                        1
+                    </div>
+                    <p>
+                        Our lens captures not
+just images but the
+essence of moments.
+We believe in the power
+of a well-timed click to
+tell a powerful story.
+                    </p>
+                    <!-- divider start -->
+                    <div class="inner-divider-half visible-mobile-devices"></div>
+                    <!-- divider end -->
+                </div>
+                <!-- col end -->
+                <!-- col start -->
+                <div class="col-md-3 three-step-method-block middle">
+                    <h4 class="three-step-method-heading">
+                        Video Coverage
+                    </h4>
+                    <div class="three-step-method-number">
+                        2
+                    </div>
+                    <p>
+                        Events come to life
+through our camera's
+lens. We transform
+occasions into
+cherished memories,
+ready to be relived
+                    </p>
+                    <!-- divider start -->
+                    <div class="inner-divider-half visible-mobile-devices"></div>
+                    <!-- divider end -->
+                </div>
+                <!-- col end -->
+                <!-- col start -->
+                <div class="col-md-3 three-step-method-block">
+                    <h4 class="three-step-method-heading">
+                        Film Production
+                    </h4>
+                    <div class="three-step-method-number">
+                        3
+                    </div>
+                    <p>
+                        We are the architects of
+cinematic experiences.
+Our films are more than
+just visuals; they are
+journeys that leave a
+lasting impact.
+
+                    </p>
+                </div>
+
+                <div class="col-md-3 three-step-method-block">
+                    <h4 class="three-step-method-heading">
+                        Motion and Still
+Graphic Designing
+                    </h4>
+                    <div class="three-step-method-number">
+                        4
+                    </div>
+                    <p>
+                        Ideas and concepts are
+transformed into
+captivating visuals. Our
+designs breathe life
+into your vision
+
+                    </p>
+                </div>
+                <!-- col end -->
+            </div>
+            <!-- row end -->
+        </div>
+        <!-- container end -->
+    </section>
+    <!-- three step method end -->
+    <!-- divider start -->
+    <div class="inner-divider"></div>
+    <!-- divider end -->
+    <!-- purchase start -->
+    <section class="section-parallax" id="purchase">
+        <!-- container start -->
+        <div class="container-fluid sections">
+            <!-- row start -->
+            <div class="row">
+                <!-- parallax wrapper start -->
+                <div class="parallax parallax-purchase" data-parallax-speed="0.75">
+                    <!-- parallax overlay start -->
+                    <div class="parallax-overlay"></div>
+                    <!-- parallax overlay end -->
+                    <!-- parallax content start -->
+                    <div class="parallax-content">
+                        <!-- page title start -->
+                        <h2 class="section-heading section-heading-small light">
+                            <span>Contact</span> Rose Gold<br>
+                            <span>and make</span> a memorable story<span> with your loved ones</span>
+                        </h2>
+                        <!-- page title end -->
+                        <!-- divider start -->
+                        <div class="inner-divider-ultra-half"></div>
+                        <!-- divider end -->
+                        <!-- page subtitle start -->
+                        <h2 class="section-subheading light">
+                            <span>Style is everything</span>
+                        </h2>
+                        <!-- page subtitle end -->
+                        <!-- divider start -->
+                        <div class="inner-divider-half"></div>
+                        <!-- divider end -->
+                        <!-- button start -->
+                        <div class="more-wraper-center more-wraper-center-purchase">
+                            <a href="https://form.jotform.com/233534752911557" target="_top">
+                                <div class="more-button-bg-center more-button-circle"></div>
+                                <div class="more-button-txt-center">
+                                    <span>Contact</span>
+                                </div>
+                            </a>
+                        </div>
+                        <!-- button end -->
+                    </div>
+                    <!-- parallax content end -->
+                </div>
+                <!-- parallax wrapper end -->
+            </div>
+            <!-- row end -->
+        </div>
+        <!-- container end -->
+    </section>
+    <!-- purchase end -->
+    <!-- footer start -->
+    <section id="footer">
+        <!-- divider start -->
+        <div class="inner-divider"></div>
+        <!-- divider end -->
+        <!-- container start -->
+        <div class="container-fluid sections">
+            <!-- row start -->
+            <div class="row footer-credits">
+                <!-- footer logo start -->
+                <div class="footer-credits-logo">
+                    <img alt="logo" height="40" width="40" src="{% static 'img/logo-white.png' %}">
+                </div>
+                <!-- footer logo end -->
+                <!-- page subtitle start -->
+                <h2 class="hide-me">
+                    Placeholder
+                </h2>
+                <!-- page subtitle end -->
+                <!-- divider start -->
+                <div class="inner-divider-ultra-half"></div>
+                <!-- divider end -->
+                <!-- footer copyright start -->
+                <div class="footer-credits-copyright-wrapper">
+                    <div id="footer-text" class="footer-credits-copyright">
+                    </div>
+                </div>
+                <!-- footer copyright end -->
+            </div>
+            <!-- row end -->
+        </div>
+        <!-- container end -->
+    </section>
+    <!-- footer end -->
+    <!-- divider start -->
+    <div class="inner-divider"></div>
+    <!-- divider end -->
+    <!-- to top arrow start -->
+    <a class="page-scroll" href="#home">
+        <div class="to-top-arrow">
+            <span class="ion-ios-arrow-up"></span>
+        </div>
+    </a>
+    <script>
+        const currentYear = new Date().getFullYear();
+        const d = document.getElementById("footer-text");
+                        
+        d.innerHTML = `<a class="link-underline" href="/" target="_top">Rose Gold ${currentYear}</a> &copy; All Rights Reserved.`
+    </script>
+</body>
+
+{% endblock content %}
