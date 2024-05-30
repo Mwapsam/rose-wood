@@ -77,6 +77,7 @@ DATABASES = {
         "PASSWORD": os.environ.get("DATABASE_PASSWORD", None),
         "HOST": os.environ.get("DATABASE_HOST", None),
         "PORT": os.environ.get("DATABASE_PORT", None),
+        "OPTIONS": {"options": "-c search_path=public"},
     }
 }
 
@@ -107,8 +108,6 @@ STATICFILES_FINDERS = [
     "django.contrib.staticfiles.finders.FileSystemFinder",
     "django.contrib.staticfiles.finders.AppDirectoriesFinder",
 ]
-
-
 
 
 STORAGES = {
