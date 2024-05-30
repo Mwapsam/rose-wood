@@ -1,7 +1,5 @@
 FROM python:3.9.12-slim-buster
 
-#FROM python:3.9.12
-
 WORKDIR /app
 
 ENV PYTHONFAULTHANDLER=1 \
