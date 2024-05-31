@@ -17,22 +17,15 @@ X_FRAME_OPTIONS = "DENY"
 
 ALLOWED_HOSTS = ["rosegold-ent.com", "www.rosegold-ent.com"]
 
+STATICFILES_DIRS = [
+    os.path.join(PROJECT_DIR, "static"),
+]
+
 STATIC_URL = "/static/"
 STATIC_ROOT = os.path.join(BASE_DIR, "staticfiles")
 
 MEDIA_URL = "/media/"
 MEDIA_ROOT = os.path.join(BASE_DIR, "media")
-
-DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
-
-STORAGES = {
-    "default": {
-        "BACKEND": "django.core.files.storage.FileSystemStorage",
-    },
-    "staticfiles": {
-        "BACKEND": "whitenoise.storage.CompressedManifestStaticFilesStorage",
-    },
-}
 
 DATA_UPLOAD_MAX_MEMORY_SIZE = 100 * 1024 * 1024
 FILE_UPLOAD_MAX_MEMORY_SIZE = 50 * 1024 * 1024

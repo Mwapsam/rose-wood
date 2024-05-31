@@ -110,8 +110,6 @@ STATICFILES_FINDERS = [
 ]
 
 
-
-
 STORAGES = {
     "default": {
         "BACKEND": "django.core.files.storage.FileSystemStorage",
@@ -131,3 +129,5 @@ WAGTAILSEARCH_BACKENDS = {
 }
 
 WAGTAILADMIN_BASE_URL = "https://rosegold-ent.com"
+
+DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
