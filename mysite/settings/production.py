@@ -1,13 +1,12 @@
 from .base import *
 
-DEBUG = True
+DEBUG = False
 SECRET_KEY = os.environ.get(
     "SECRET_KEY", "django-insecure-utq_+#8*49m9)!vhay&zyy4p!0*14uced2ck82k6xw=1z8m2=5"
 )
 
 CSRF_TRUSTED_ORIGINS = ["https://rosegold-ent.com"]
 
-# SECURE_SSL_REDIRECT = True
 CSRF_COOKIE_SECURE = True
 SESSION_COOKIE_SECURE = True
 SECURE_HSTS_SECONDS = 31536000
