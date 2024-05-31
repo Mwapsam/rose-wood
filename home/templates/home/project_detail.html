@@ -1,183 +1,849 @@
 {% extends "base.html" %} 
+
+
 {% load static wagtailcore_tags wagtailimages_tags wagtailroutablepage_tags %} 
 
+
 {% block content %}
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-FXRQ3KLQS3"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-FXRQ3KLQS3');
+</script>
 
 <style>
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@200;300;400;600;700;800&amp;display=swap');
 
-  swiper-container {
+*,
+*:before,
+*:after {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+}
+
+.wk-desk-1 {
+  width: 8.333333%;
+}
+
+.wk-desk-2 {
+  width: 16.666667%;
+}
+
+.wk-desk-3 {
+  width: 25%;
+}
+
+.wk-desk-4 {
+  width: 33.333333%;
+}
+
+.wk-desk-5 {
+  width: 41.666667%;
+}
+
+.wk-desk-6 {
+  width: 50%;
+}
+
+.wk-desk-7 {
+  width: 58.333333%;
+}
+
+.wk-desk-8 {
+  width: 66.666667%;
+}
+
+.wk-desk-9 {
+  width: 75%;
+}
+
+.wk-desk-10 {
+  width: 83.333333%;
+}
+
+.wk-desk-11 {
+  width: 91.666667%;
+}
+
+.wk-desk-12 {
+  width: 100%;
+}
+
+@media (max-width: 1024px) {
+  .wk-ipadp-1 {
+    width: 8.333333%;
+  }
+
+  .wk-ipadp-2 {
+    width: 16.666667%;
+  }
+
+  .wk-ipadp-3 {
+    width: 25%;
+  }
+
+  .wk-ipadp-4 {
+    width: 33.333333%;
+  }
+
+  .wk-ipadp-5 {
+    width: 41.666667%;
+  }
+
+  .wk-ipadp-6 {
+    width: 50%;
+  }
+
+  .wk-ipadp-7 {
+    width: 58.333333%;
+  }
+
+  .wk-ipadp-8 {
+    width: 66.666667%;
+  }
+
+  .wk-ipadp-9 {
+    width: 75%;
+  }
+
+  .wk-ipadp-10 {
+    width: 83.333333%;
+  }
+
+  .wk-ipadp-11 {
+    width: 91.666667%;
+  }
+
+  .wk-ipadp-12 {
     width: 100%;
-    height: 100%;
-    margin-left: auto;
+  }
+}
+
+@media (max-width: 768px) {
+  .wk-tab-1 {
+    width: 8.333333%;
+  }
+
+  .wk-tab-2 {
+    width: 16.666667%;
+  }
+
+  .wk-tab-3 {
+    width: 25%;
+  }
+
+  .wk-tab-4 {
+    width: 33.333333%;
+  }
+
+  .wk-tab-5 {
+    width: 41.666667%;
+  }
+
+  .wk-tab-6 {
+    width: 50%;
+  }
+
+  .wk-tab-7 {
+    width: 58.333333%;
+  }
+
+  .wk-tab-8 {
+    width: 66.666667%;
+  }
+
+  .wk-tab-9 {
+    width: 75%;
+  }
+
+  .wk-tab-10 {
+    width: 83.333333%;
+  }
+
+  .wk-tab-11 {
+    width: 91.666667%;
+  }
+
+  .wk-tab-12 {
+    width: 100%;
+  }
+}
+
+@media (max-width: 500px) {
+  .wk-mobile-1 {
+    width: 8.333333%;
+  }
+
+  .wk-mobile-2 {
+    width: 16.666667%;
+  }
+
+  .wk-mobile-3 {
+    width: 25%;
+  }
+
+  .wk-mobile-4 {
+    width: 33.333333%;
+  }
+
+  .wk-mobile-5 {
+    width: 41.666667%;
+  }
+
+  .wk-mobile-6 {
+    width: 50%;
+  }
+
+  .wk-mobile-7 {
+    width: 58.333333%;
+  }
+
+  .wk-mobile-8 {
+    width: 66.666667%;
+  }
+
+  .wk-mobile-9 {
+    width: 75%;
+  }
+
+  .wk-mobile-10 {
+    width: 83.333333%;
+  }
+
+  .wk-mobile-11 {
+    width: 91.666667%;
+  }
+
+  .wk-mobile-12 {
+    width: 100%;
+  }
+}
+
+
+
+
+
+
+
+  .desktop_2 * {
+    font-family: Nunito, sans-serif;
+    margin-top: 0px;
+    margin-right: 0px;
+    margin-bottom: 0px;
+    margin-left: 0px;
+  }
+
+  .desktop_2 button {
+    cursor: pointer;
+  }
+
+  .desktop_2 img {
+    cursor: pointer;
+  }
+
+  .desktop_2 .hdImg {
+    display: none;
+  }
+
+  .desktop_2 .btn-box {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: none;
+  }
+
+  .desktop_2 .project:hover .btn-box {
+    display: block;
+  }
+
+  .desktop_2 .Container {
+    width: 90%;
+    margin-top: 100px;
     margin-right: auto;
+    margin-bottom: 50px;
+    margin-left: auto;
   }
 
-  swiper-slide {
-    text-align: center;
-    font-size: 18px;
+  .desktop_2 .portfolio {
+    background-image: initial;
+    background-position-x: initial;
+    background-position-y: initial;
+    background-size: initial;
+    background-repeat-x: initial;
+    background-repeat-y: initial;
+    background-attachment: initial;
+    background-origin: initial;
+    background-clip: initial;
+    position: relative;
     display: flex;
-    justify-content: center;
-    align-items: center;
+    flex-wrap: wrap;
+    flex-direction: column;
   }
 
-  swiper-slide img {
-      /* width: 100%; */
-      /* height: 100%; */
+  .desktop_2 .project {
+    position: relative;
+    background-image: initial;
+    background-position-x: initial;
+    background-position-y: initial;
+    background-size: initial;
+    background-repeat-x: initial;
+    background-repeat-y: initial;
+    background-attachment: initial;
+    background-origin: initial;
+    background-clip: initial;
+  }
+
+  .desktop_2 .overlay {
+    position: fixed;
+    background-image: initial;
+    background-position-x: initial;
+    background-position-y: initial;
+    background-size: initial;
+    background-repeat-x: initial;
+    background-repeat-y: initial;
+    background-attachment: initial;
+    background-origin: initial;
+    background-clip: initial;
+    background-color: rgba(71, 69, 69, 0.7);
+    height: 100%;
+    width: 100%;
+    max-height: 100%;
+    top: 0px;
+    left: 0px;
+    z-index: 100;
+    display: none;
+    padding-top: 20px;
+    padding-right: 20px;
+    padding-bottom: 20px;
+    padding-left: 20px;
+  }
+
+  .desktop_2 .overlay-inner {
+    top: 50%;
+    right: 0px;
+    bottom: 0px;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-image: initial;
+    background-position-x: initial;
+    background-position-y: initial;
+    background-size: initial;
+    background-repeat-x: initial;
+    background-repeat-y: initial;
+    background-attachment: initial;
+    background-origin: initial;
+    background-clip: initial;
+    background-color: white;
+    max-width: 700px;
+    width: fit-content;
+    padding-top: 35px;
+    padding-right: 20px;
+    padding-bottom: 20px;
+    padding-left: 20px;
+    position: relative;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+    border-bottom-left-radius: 10px;
+    opacity: 1;
+    max-width: 50%;
+    max-height: 85%;
+  }
+
+  .desktop_2 .close {
+    position: absolute;
+    top: 9px;
+    right: 15px;
+    background-image: none;
+    background-position-x: initial;
+    background-position-y: initial;
+    background-size: initial;
+    background-repeat-x: initial;
+    background-repeat-y: initial;
+    background-attachment: initial;
+    background-origin: initial;
+    background-clip: initial;
+    background-color: initial;
+    outline-color: initial;
+    outline-style: initial;
+    outline-width: 0px;
+    color: #474545;
+    border-top-width: 0px;
+    border-right-width: 0px;
+    border-bottom-width: 0px;
+    border-left-width: 0px;
+    border-top-style: initial;
+    border-right-style: initial;
+    border-bottom-style: initial;
+    border-left-style: initial;
+    border-top-color: initial;
+    border-right-color: initial;
+    border-bottom-color: initial;
+    border-left-color: initial;
+    border-image-source: initial;
+    border-image-slice: initial;
+    border-image-width: initial;
+    border-image-outset: initial;
+    border-image-repeat: initial;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+  }
+
+  .desktop_2 .overlay-inner .hdImgs {
+    width: fit-content;
+    height: calc(80% - 55px);
+    display: flex;
+    object-fit: cover;
+  }
+
+  .desktop_2 .overlay-inner img {
+    max-height: 100%;
+    max-width: 100%;
+    transform: none;
+    object-fit: cover;
+  }
+
+  .desktop_2 .bigImg {
+    width: 1085px;
+    height: 612px;
+    margin-top: 0px;
+    margin-right: 10px;
+    margin-bottom: 10px;
+    margin-left: 0px;
+    object-fit: cover;
+  }
+
+  .desktop_2 .project-image {
+    height: 300px;
+    width: 269px;
+    margin-top: 0px;
+    margin-right: 10px;
+    margin-bottom: 10px;
+    margin-left: 0px;
+    object-fit: cover;
+  }
+
+  .desktop_2 .above {
+    display: flex;
+  }
+
+  .desktop_2 .bottom {
+    display: flex;
+    justify-content: space-around;
+  }
+
+  @media (max-width: 1024px) {
+    .desktop_2 .project-image {
+      width: 165px;
+      height: 165px;
       object-fit: cover;
     }
+
+    .desktop_2 .Container {
+      width: 690px;
+      margin-top: 80px;
+      margin-right: auto;
+      margin-bottom: 50px;
+      margin-left: auto;
+    }
+
+    .desktop_2 .bigImg {
+      width: 515px;
+      height: 340px;
+      object-fit: cover;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .desktop_2 .project {
+      width: 220px;
+      display: inline-block;
+      margin-top: 0px;
+      margin-right: 0px;
+      margin-bottom: 0px;
+      margin-left: 0px;
+    }
+
+    .desktop_2 .project-first {
+      width: 450px;
+    }
+
+    .desktop_2 .above {
+      flex-direction: column;
+    }
+
+    .desktop_2 .portfolio {
+      justify-content: flex-start;
+    }
+
+    .desktop_2 .Container {
+      width: 450px;
+    }
+
+    .desktop_2 .bigImg {
+      width: 450px;
+    }
+
+    .desktop_2 .project-image {
+      width: 220px;
+      height: 200px;
+      margin-top: 0px;
+      margin-right: 0px;
+      margin-bottom: 10px;
+      margin-left: 0px;
+      display: inline-block;
+      padding-top: 0px;
+      padding-right: 0px;
+      padding-bottom: 0px;
+      padding-left: 0px;
+      object-fit: cover;
+    }
+
+    .desktop_2 .side {
+      display: flex;
+      width: 450px;
+      justify-content: space-between;
+    }
+
+    .desktop_2 .bottom {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: stretch;
+    }
+
+    .desktop_2 .project-image.last {
+      margin-top: 0px;
+      margin-right: 0px;
+      margin-bottom: 10px;
+      margin-left: 5px;
+    }
+
+    .desktop_2 .project-image.last {
+      margin-top: 0px;
+      margin-right: 0px;
+      margin-bottom: 10px;
+      margin-left: 0px;
+    }
+  }
+
+  @media (max-width: 500px) {
+    .desktop_2 .bigImg {
+      width: 250px;
+      height: 200px;
+      object-fit: cover;
+    }
+
+    .desktop_2 .project {
+      width: 110px;
+      margin-top: 0px;
+      margin-right: 0px;
+      margin-bottom: 20px;
+      margin-left: 0px;
+    }
+
+    .desktop_2 .Container {
+      width: 250px;
+      margin-top: 80px;
+      margin-right: auto;
+      margin-bottom: 50px;
+      margin-left: auto;
+    }
+
+    .desktop_2 .project-image {
+      width: 110px;
+      height: 110px;
+      object-fit: cover;
+    }
+
+    .desktop_2 .side {
+      flex-direction: row;
+      width: 250px;
+    }
+
+    .desktop_2 .project-image.last {
+      margin-top: 0px;
+      margin-right: 0px;
+      margin-bottom: 10px;
+      margin-left: 0px;
+    }
+
+    .desktop_2 .project.last-project {
+      margin-top: 0px;
+      margin-right: 0px;
+      margin-bottom: 0px;
+      margin-left: 30px;
+    }
+
+    .desktop_2 .project-first {
+      width: 250px;
+    }
+
+    .desktop_2 .overlay-inner {
+      max-width: 90%;
+    }
+  }
+
+
+
+ /* Style for the slider popup */
+.slider-popup {
+  display: none; /* Hide by default */
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.8);
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+.slider-content {
+  position: relative;
+  width: 80%;
+  max-width: 800px;
+  height: 600px;
+  background: white;
+  padding: 5px;
+  border-radius: 8px;
+  overflow: hidden;
+  margin: 3rem auto;
+}
+
+.slider-content .close-slider {
+  position: absolute;
+  top: 10px;
+  right: 20px;
+  font-size: 30px;
+  cursor: pointer;
+}
+
+.slider-images img {
+  width: 100%;
+  height: 590px;
+  display: none;
+  object-fit: cover;
+}
+
+.slider-images img.active {
+  display: block;
+}
+
+.slider-content .prev, .slider-content .next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(0, 0, 0, 0.5);
+  color: white;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+}
+
+.slider-content .prev {
+  left: 10px;
+}
+
+.slider-content .next {
+  right: 10px;
+}
+
+.tittle-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 2rem;
+}
+
+.tittle-container h1 {
+  color: aliceblue;
+  font-weight: bolder;
+}
 </style>
 
-
-  <div class="preloader-bg preloader-bg-light"></div>
-  <div id="preloader" class="preloader-light">
-    <div id="preloader-status">
-      <div class="preloader-position loader loader-light">
-        <span></span>
-      </div>
+<div class="preloader-bg preloader-bg-light"></div>
+<div id="preloader" class="preloader-light">
+  <div id="preloader-status">
+    <div class="preloader-position loader loader-light">
+      <span></span>
     </div>
   </div>
+</div>
 
-  <swiper-container class="mySwiper" init="false" 
-    space-between="30" autoplay-delay="2500" autoplay-disable-on-interaction="false">
-    {% for image in project.project_images.all %}
+<div class="tittle-container">
+  <h1>
+    {{ project.title }}
+  </h1>
+</div>
 
-    <swiper-slide>
-      <a
-      data-lity=""
-      href="{{image.image.file.url}}"
-  >
-      <img
-          src="{{image.image.file.url}}"
-          height="420"
-      />
-  </a>
-    </swiper-slide>
-    {% endfor %}
-
-  </swiper-container>
-
-  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-element-bundle.min.js"></script>
-  <script>
-    const swiperEl = document.querySelector('swiper-container')
-    Object.assign(swiperEl, {
-      slidesPerView: 1,
-      spaceBetween: 10,
-      pagination: {
-        clickable: true,
-      },
-      breakpoints: {
-        640: {
-          slidesPerView: 2,
-          spaceBetween: 20,
-        },
-        768: {
-          slidesPerView: 4,
-          spaceBetween: 40,
-        },
-        1024: {
-          slidesPerView: 5,
-          spaceBetween: 50,
-        },
-      },
-    });
-    swiperEl.initialize();
-  </script>
-
-  <!-- <div class="home-page" id="home">
-
-    <div class="hero-fullscreen">
-
-      <div
-        class="parallax-window"
-        data-image-src="{{project.project_images.first.image.file.url}}"
-        data-parallax="scroll"
-      ></div>
-     
-    </div>
-    
-  </div>
-  <div class="page-wrapper">
-    <section class="bg-2">
-      <div class="container inner-spacer">
-        <div class="inner-divider"></div>
-        <div class="row">
-          <div class="col-lg-12">
-              {{ project.title }}
-            </h2>
-          </div>
-        </div>
-        <div class="inner-divider-half"></div>
-        <div class="row">
-          <div class="col-lg-12">
-            <h1 class="section-header section-header-dark">
-              Simplicity is not a style, it is more a philosophy about how to
-              design something more effectively.
-            </h1>
-            <div class="inner-divider-half"></div>
-            <div class="section-txt section-txt-dark">
-              <p>
-                Lorem Ipsum is simply dummy text of the printing and typesetting
-                industry. Lorem Ipsum has been the industry's standard dummy
-                text ever since the 1500s.
-              </p>
-            </div>
-            <div class="inner-divider-half"></div>
-            <div class="owl-carousel popup-photo-gallery" id="owl-carousel-about">
-              <a
-                class="button-the"
-                data-lity=""
-                href="{{project.project_images.first.image.file.url}}"
-              >
-                {% if project.project_images.first %} 
-                    {% image project.project_images.first.image fill-320x280-c100 loading="lazy" %} 
-                {% endif %}
-                <div class="carousel-item-all carousel-item-about-02"></div>
-              </a>
-            </div>
-          </div>
-        </div>
-        <div class="inner-divider"></div>
-      </div>
-    </section>
- 
-    <section class="bg-3">
-      <h1 class="section-header section-header-dark">Responsive Image Gallery</h1>
-      <hr />
-      <div id="gallery" class="container-fluid">
-        {% for image in project.project_images.all %}
-        <div class="button-the-wrapper button-the-wrapper-all">
-            <a
-                data-lity=""
-                href="{{image.image.file.url}}"
-            >
+<div class="desktop_2" unique-script-id="w-w-dm-id">
+  <div class="Container">
+    <div class="portfolio">
+      <div class="above">
+        <div class="project project-first">
+          {% if project.project_images.first %}
+            <img
+              alt=""
+              class="bigImg image-block"
+              src="{{project.project_images.first.image.file.url}}"
+            />
+          {% endif %}
+          <div class="overlay">
+            <div class="overlay-inner">
+              <button class="close">Close X</button>
+              <div class="hdImgs">
                 <img
-                    src="{{image.image.file.url}}"
-                    class="img-responsive"
+                  alt=""
+                  class="againImg"
+                  src="https://workik-widget-assets.s3.amazonaws.com/widget-assets/images/d11.png"
                 />
-            </a>
-        </div>
-        {% endfor %}
-      </div>
-
-      <div id="myModal" class="modal fade" role="dialog">
-        <div class="modal-dialog">
-          <div class="modal-content">
-            <div class="modal-body"></div>
+              </div>
+            </div>
+          </div>
+          <div class="btn-box">
+            <button class="btn view-btn">View</button>
           </div>
         </div>
+        <div class="side">
+          {% with images=project.project_images.all %}
+            {% for image in images|slice:"1:3" %}
+            <div class="project">
+              <img
+                alt=""
+                class="project-image"
+                src="{{ image.image.file.url }}"
+              />
+              <div class="overlay">
+                <div class="overlay-inner">
+                  <button class="close">Close X</button>
+                  <div class="hdImgs">
+                    <img
+                      alt=""
+                      class="againImg"
+                      src="{{ image.image.file.url }}"
+                    />
+                  </div>
+                </div>
+              </div>
+              <div class="btn-box">
+                <button class="btn view-btn">View</button>
+              </div>
+            </div>
+            {% endfor %}
+          {% endwith %}
+        </div>
       </div>
-    </section>
-
-    <div class="to-top-arrow">
-      <span class="ion-ios-arrow-up"></span>
-    </div>
-
-  </div> -->
-  <div id="myModal" class="modal fade" role="dialog">
-    <div class="modal-dialog">
-      <div class="modal-content">
-        <div class="modal-body"></div>
+      <div class="bottom">
+        {% with images=project.project_images.all %}
+          {% for image in images|slice:"3:8" %}
+          <div class="project">
+            <img
+              alt=""
+              class="project-image"
+              src="{{ image.image.file.url }}"
+            />
+            <div class="overlay">
+              <div class="overlay-inner">
+                <button class="close">Close X</button>
+                <div class="hdImgs">
+                  <img
+                    alt=""
+                    class="againImg"
+                    src="{{ image.image.file.url }}"
+                  />
+                </div>
+              </div>
+            </div>
+            <div class="btn-box">
+              <button class="btn view-btn">View</button>
+            </div>
+          </div>
+          {% endfor %}
+        {% endwith %}
       </div>
     </div>
   </div>
+</div>
+
+<!-- Popup Slider Container -->
+<div id="slider-popup" class="slider-popup">
+  <div class="slider-content">
+    <span class="close-slider">&times;</span>
+    <div class="slider-images">
+      <!-- Images will be dynamically inserted here by jQuery -->
+    </div>
+    <button class="prev">&lt;</button>
+    <button class="next">&gt;</button>
+  </div>
+</div>
+
+
+
+<script src="{% static 'js/jquery.js' %}"></script>
+<script>
+$(document).ready(function() {
+  // Show the slider popup when a "View" button is clicked
+  $('.view-btn').on('click', function() {
+    var images = $(this).closest('.portfolio').find('.project img').map(function() {
+      return $(this).attr('src');
+    }).get();
+    
+    var sliderImagesContainer = $('#slider-popup .slider-images');
+    sliderImagesContainer.empty(); // Clear previous images
+
+    images.forEach(function(src, index) {
+      sliderImagesContainer.append('<img src="' + src + '" alt="Slider Image" class="' + (index === 0 ? 'active' : '') + '">');
+    });
+
+    $('#slider-popup').fadeIn();
+  });
+
+  // Close the slider popup
+  $('.close-slider').on('click', function() {
+    $('#slider-popup').fadeOut();
+  });
+
+  // Close the slider popup when clicking outside the content area
+  $(document).on('click', function(event) {
+    if (!$(event.target).closest('.slider-content').length && !$(event.target).closest('.view-btn').length) {
+      $('#slider-popup').fadeOut();
+    }
+  });
+
+  // Handle the "Next" button click
+  $('.next').on('click', function() {
+    var currentImage = $('.slider-images img.active');
+    var nextImage = currentImage.next('img');
+    if (nextImage.length === 0) {
+      nextImage = $('.slider-images img').first();
+    }
+    currentImage.removeClass('active');
+    nextImage.addClass('active');
+  });
+
+  // Handle the "Previous" button click
+  $('.prev').on('click', function() {
+    var currentImage = $('.slider-images img.active');
+    var prevImage = currentImage.prev('img');
+    if (prevImage.length === 0) {
+      prevImage = $('.slider-images img').last();
+    }
+    currentImage.removeClass('active');
+    prevImage.addClass('active');
+  });
+});
+
+
+</script>
+
 {% endblock content %}

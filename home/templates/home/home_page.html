@@ -6,6 +6,23 @@
 
 {% block content %}
 
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-FXRQ3KLQS3"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-FXRQ3KLQS3');
+</script>
+
+<style>
+    .slider-img {
+        width: 17rem;
+        height: 29rem;
+        object-fit: cover;
+    }
+</style>
+
 <body class="body-dark">
     <div class="preloader-bg"></div>
     <div id="preloader">
@@ -165,7 +182,7 @@
                             {% for image in slide.slide_images.all %}
                                 <div class="img-fullwidth-wrapper m-3">
                                     <a href="{{image.image.file.url}}" target="_top">
-                                        <img height="420" width="320" alt="Image Preview" src="{{image.image.file.url}}"></a>
+                                        <img class="slider-img" alt="Image Preview" src="{{image.image.file.url}}"></a>
                                 </div>
                             {% endfor %}
                         {% endfor %}
@@ -384,8 +401,8 @@
                         {% for slide in page.slides.all %}
                             {% for image in slide.slide_images.all %}
                                 <div class="img-fullwidth-wrapper">
-                                    <a href="https://themeforest.net/item/waye-under-construction-coming-soon-template/21332869" target="_top">
-                                        <img height="420" width="290" alt="Image Preview" src="{{image.image.file.url}}"></a>
+                                    <a href="{{image.image.file.url}}" target="_top">
+                                        <img class="slider-img" alt="Image Preview" src="{{image.image.file.url}}"></a>
                                 </div>
                             {% endfor %}
                         {% endfor %}
