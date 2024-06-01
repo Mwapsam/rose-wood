@@ -37,7 +37,7 @@ LOGGING = {
         "file": {
             "level": "INFO",
             "class": "logging.FileHandler",
-            "filename": os.path.join(BASE_DIR, "logs/mysite.log"),
+            "filename": "mysite/logs.log",
         },
     },
     "root": {
