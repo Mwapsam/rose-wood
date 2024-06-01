@@ -1,9 +1,8 @@
 from .base import *
 
 DEBUG = False
-SECRET_KEY = os.environ.get(
-    "SECRET_KEY", "django-insecure-utq_+#8*49m9)!vhay&zyy4p!0*14uced2ck82k6xw=1z8m2=5"
-)
+
+SECRET_KEY = os.environ.get("SECRET_KEY", "your-secure-default-secret-key")
 
 CSRF_TRUSTED_ORIGINS = ["https://rosegold-ent.com"]
 
@@ -23,6 +22,8 @@ STATICFILES_DIRS = [
 
 STATIC_URL = "/static/"
 STATIC_ROOT = os.path.join(BASE_DIR, "staticfiles")
+# STATICFILES_STORAGE = 'django.contrib.staticfiles.storage.ManifestStaticFilesStorage'
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 MEDIA_URL = "/media/"
 MEDIA_ROOT = os.path.join(BASE_DIR, "media")
@@ -31,7 +32,6 @@ DATA_UPLOAD_MAX_MEMORY_SIZE = 100 * 1024 * 1024
 FILE_UPLOAD_MAX_MEMORY_SIZE = 50 * 1024 * 1024
 WAGTAILIMAGES_MAX_UPLOAD_SIZE = 50 * 1024 * 1024
 
-
 LOGGING = {
     "version": 1,
     "disable_existing_loggers": False,
@@ -39,7 +39,7 @@ LOGGING = {
         "file": {
             "level": "INFO",
             "class": "logging.FileHandler",
-            "filename": "mysite/logs.log",
+            "filename": os.path.join(BASE_DIR, "logs/mysite.log"),
         },
     },
     "root": {
