@@ -1,14 +1,9 @@
 from django.core.paginator import EmptyPage, PageNotAnInteger, Paginator
 from django.template.response import TemplateResponse
+from django.views.generic import TemplateView
+from wagtail.models import Site
 
 from wagtail.models import Page
-
-# To enable logging of search queries for use with the "Promoted search results" module
-# <https://docs.wagtail.org/en/stable/reference/contrib/searchpromotions.html>
-# uncomment the following line and the lines indicated in the search function
-# (after adding wagtail.contrib.search_promotions to INSTALLED_APPS):
-
-# from wagtail.contrib.search_promotions.models import Query
 
 
 def search(request):
@@ -44,3 +39,15 @@ def search(request):
             "search_results": search_results,
         },
     )
+
+
+class RobotsView(TemplateView):
+
+    content_type = 'text/plain'
+    template_name = 'robots.txt'
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        request = context['view'].request
+        context['wagtail_site'] = Site.find_for_request(request)
+        return context

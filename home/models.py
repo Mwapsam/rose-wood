@@ -2,12 +2,15 @@ import uuid
 from django.db import models
 from django.http import Http404
 from django.shortcuts import render
+from django.urls import reverse
+from django.utils import timezone
 
 from wagtail.models import Page, Orderable, ClusterableModel
 from wagtail.images.models import Image
 from wagtail.admin.panels import FieldPanel, InlinePanel
 from modelcluster.fields import ParentalKey
 from wagtail.contrib.routable_page.models import RoutablePageMixin, path
+from wagtailmetadata.models import MetadataPageMixin
 
 from django.db import models
 from modelcluster.models import ClusterableModel
@@ -42,8 +45,11 @@ class NavigationSettings(BaseGenericSetting):
     ]
 
 
-class HomePage(RoutablePageMixin, Page):
-    content_panels = Page.content_panels + [InlinePanel("projects"), InlinePanel("slides")]
+class HomePage(MetadataPageMixin, RoutablePageMixin, Page):
+    content_panels = Page.content_panels + [
+        InlinePanel("projects"),
+        InlinePanel("slides"),
+    ]
 
     @path("project/<uuid:id>/")
     def project_detail(self, request, id):
@@ -57,6 +63,27 @@ class HomePage(RoutablePageMixin, Page):
             "home/project_detail.html",
             context={"project": project},
         )
+
+    def get_sitemap_urls(self, request=None):
+        urls = []
+
+        # Add the HomePage URL
+        urls.append({
+            'location': self.full_url,
+            'lastmod': timezone.now(),
+            'priority': 0.8,
+        })
+
+        # Add URLs for each project
+        for project in self.projects.all():
+            project_url = self.reverse_subpage('project_detail', args=[str(project.id)])
+            urls.append({
+                'location': self.full_url + project_url,
+                'lastmod':  timezone.now(),
+                'priority': 0.5,
+            })
+
+        return urls
 
 
 class ProjectImages(Orderable):
@@ -88,9 +115,7 @@ class Project(ClusterableModel):
 
 class SlideImages(Orderable):
     id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
-    slide = ParentalKey(
-        "Slide", related_name="slide_images", on_delete=models.CASCADE
-    )
+    slide = ParentalKey("Slide", related_name="slide_images", on_delete=models.CASCADE)
     image = models.ForeignKey(
         Image,
         on_delete=models.CASCADE,

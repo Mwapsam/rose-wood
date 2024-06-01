@@ -32,7 +32,9 @@ INSTALLED_APPS = [
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.staticfiles",
+    "django.contrib.sitemaps",
     "django_social_share",
+    "wagtailmetadata",
 ]
 
 MIDDLEWARE = [
@@ -63,6 +65,7 @@ TEMPLATES = [
                 "django.contrib.auth.context_processors.auth",
                 "django.contrib.messages.context_processors.messages",
                 "wagtail.contrib.settings.context_processors.settings",
+                "home.context_processors.home_page",
             ],
         },
     },
@@ -130,4 +133,4 @@ WAGTAILSEARCH_BACKENDS = {
 
 WAGTAILADMIN_BASE_URL = "https://rosegold-ent.com"
 
-DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"

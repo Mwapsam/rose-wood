@@ -1,8 +1,12 @@
 {% extends "base.html" %}
 {% load static wagtailcore_tags wagtailimages_tags wagtailroutablepage_tags %}
-{% load social_share %}
+{% load social_share wagtailmetadata_tags %}
 
 {% block body_class %}template-homepage{% endblock %}
+
+{% block meta_tag %}
+  {% meta_tags %}
+{% endblock %}
 
 {% block content %}
 
