@@ -14,7 +14,7 @@ SECURE_HSTS_PRELOAD = True
 SECURE_BROWSER_XSS_FILTER = True
 X_FRAME_OPTIONS = "DENY"
 
-ALLOWED_HOSTS = ["rosegold-ent.com", "www.rosegold-ent.com"]
+ALLOWED_HOSTS = ["rosegold-ent.com", "www.rosegold-ent.com", "159.223.85.244"]
 
 STATICFILES_DIRS = [
     os.path.join(PROJECT_DIR, "static"),
